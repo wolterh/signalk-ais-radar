@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIS Radar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">
+      <div class="title">AIS Radar</div>
+      <div id="status" class="status">Connecting…</div>
+    </div>
+
+    <div class="controls">
+      <label class="control">
+        <span>Range (NM)</span>
+        <input id="range" type="range" min="0.25" max="24" step="0.25" value="2" />
+        <span id="rangeVal" class="mono">2.00</span>
+      </label>
+
+      <label class="control checkbox">
+        <input id="vectors" type="checkbox" checked />
+        <span>Vectors</span>
+      </label>
+
+      <label class="control checkbox">
+        <input id="labels" type="checkbox" checked />
+        <span>Labels</span>
+      </label>
+
+        <label class="control checkbox">
+  <input id="debug" type="checkbox" />
+  <span>Debug</span>
+</label>
+
+
+<label class="control checkbox dangerCtl">
+  <input id="dangerEnable" type="checkbox" checked />
+  <span>Danger</span>
+</label>
+
+<label class="control dangerCtl">
+  <span>CPA (NM)</span>
+  <input id="cpa" type="range" min="0.05" max="5" step="0.05" value="0.50" />
+  <span id="cpaVal" class="mono">0.50</span>
+</label>
+
+<label class="control dangerCtl">
+  <span>TCPA (min)</span>
+  <input id="tcpa" type="range" min="1" max="120" step="1" value="15" />
+  <span id="tcpaVal" class="mono">15</span>
+</label>
+
+      <button id="recenter" class="btn">Recenter</button>
+      <button id="pause" class="btn">Pause</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="canvasWrap">
+      <canvas id="radar"></canvas>
+      <div class="hud">
+        <div><span class="k">Own:</span> <span id="ownText" class="mono">—</span></div>
+        <div><span class="k">Targets:</span> <span id="countText" class="mono">0</span></div>
+        <div><span class="k">FPS:</span> <span id="fpsText" class="mono">—</span></div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="panelTitle">Targets</div>
+        <div id="targetList" class="list"></div>
+      </div>
+      <div class="panel">
+        <div class="panelTitle">Shortcuts</div>
+        <div class="small">
+          <div><span class="mono">+</span>/<span class="mono">-</span> range</div>
+          <div><span class="mono">V</span> vectors</div>
+          <div><span class="mono">L</span> labels</div>
+          <div><span class="mono">Space</span> pause</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

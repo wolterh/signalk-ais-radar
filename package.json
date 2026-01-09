@@ -1,0 +1,13 @@
+{
+  "name": "signalk-ais-radar-standalone",
+  "version": "0.2.3",
+  "description": "Standalone AIS radar webapp for Signal K (canvas-based) using Signal K Streaming API + REST priming",
+  "main": "index.js",
+  "keywords": [
+    "signalk-app",
+    "signalk-webapp",
+    "signalk-node-server-plugin"
+  ],
+  "license": "MIT",
+  "private": true
+}
